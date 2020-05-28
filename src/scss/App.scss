@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+$main-color: #30f2f2;
+$secondary-color: #61f2c2;
+$secondary-light-color: #91f291;
+$green-color: #c2f261;
+$light-green-color: #f2f230;
+$text-color: #6d5252;
+
+
+body {
+  background: $main-color;
+  color: $text-color;
+  #root {
+    .App {
+      min-width: 430px;
+      nav {
+        background-color: $secondary-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1em;
+        height: 10vh;
+        min-width: 340px;
+        margin-bottom: 2em;
+        box-shadow: inset 5px 5px 10px #52cea5, 
+                    inset -5px -5px 10px #70ffdf;
+        p {
+          font-size: 2rem;
+          font-weight: 900;
+        }
+        small {
+          font-size: 1.1rem;
+          span {
+            font-size: .8rem;
+            font-weight: 900;
+            font-style: italic;
+          }
+        }
+      }
+      main {
+        font-size: 1.5rem;
+
+        .todo {
+          margin: 0 auto;
+          margin-bottom: 1em;
+          padding: 2em;
+          border-radius: 41px;
+          background: linear-gradient(145deg, #ffff37, #e6e62e);
+          box-shadow:  5px 5px 10px #d9d92b, 
+                       -5px -5px 10px #ffff3b;
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          span {
+            font-size: 2.5rem;
+          }
+        }
+        .todones {
+          margin: 0 auto;
+          margin-bottom: 1em;
+          padding: 2em;
+          border-radius: 41px;
+          background: #9b9b2b;
+          box-shadow: inset 5px 5px 10px #848425, 
+                      inset -5px -5px 10px #b2b231;
+          
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          span {
+            font-size: 2.5rem;
+          }
+        }
+
+        .to-dos {
+          color: $text-color;
+        }
+
+        .to-dones {
+          color: $text-color;
+        }
+      }
+
+    }
+  }
+}
