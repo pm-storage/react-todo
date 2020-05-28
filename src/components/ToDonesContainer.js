@@ -10,7 +10,10 @@ const ToDonesContainer = (props) => {
   ))
 
   return(
+  <>
+  <h2>DONES</h2>
   <div className="to-dones">{jsxBoilerPlate}</div>
+  </>
   )
 }
 
