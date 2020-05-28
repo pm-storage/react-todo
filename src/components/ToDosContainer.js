@@ -5,7 +5,7 @@ const ToDosContainer = (props) => {
   let {data} = props;
 
   let jsxBoilerPlate = data.map(todo => (
-      <div className='todo' key={todo._id}>{todo.name} <span>&#9997;</span></div>
+      <div className='todo' key={todo._id}>{todo.text} <span>&#9997;</span></div>
   ))
 
   return(
