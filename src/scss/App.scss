@@ -5,6 +5,8 @@
   font-family: monospace;
 }
 
+$desktop-size: 700px;
+
 $main-color: #30f2f2;
 $secondary-color: #61f2c2;
 $secondary-light-color: #91f291;
@@ -96,4 +98,16 @@ body {
 
     }
   }
+}
+
+@media(min-width: $desktop-size) {
+
+main {
+  display: flex;
+  justify-content: space-between;
+  .todos-container {
+    width: 50%;
+  }
+}
+
 }

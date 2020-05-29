@@ -9,10 +9,10 @@ const ToDosContainer = (props) => {
   ))
 
   return(
-    <>
+    <div className="todos-container">
       <h2>TO DO'S</h2>
       <div className='to-dos'>{jsxBoilerPlate}</div>
-    </>
+    </div>
   )
 }
 
