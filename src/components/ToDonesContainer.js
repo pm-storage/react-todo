@@ -1,12 +1,12 @@
 import React from 'react';
+import Items from './Items';
 
 const ToDonesContainer = (props) => {
 
   let {data} = props;
 
   let jsxBoilerPlate = data.map(todo => (
-      <div className='todo todones' key={todo._id}>{todo.text} <span>&#10006;</span>
-      </div>
+    <Items key={todo._id} info={todo}/>
   ))
 
   return(

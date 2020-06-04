@@ -13,7 +13,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://ds-todo-api.now.sh/todos")
+    let API_URL = process.env.REACT_APP_API_URL
+    
+    fetch(API_URL)
     .then(response => response.json())
     .then(data => {
       console.log(data)
