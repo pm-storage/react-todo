@@ -9,10 +9,10 @@ const Item = (props) => {
 
   return(
     <>
-     <div className={status ? 'to-dos' : 'to-dones'}>
+     <div className={status ? 'todo' : 'todones'}>
       <p>{text}</p>
       <button>
-        {icon}
+        <span>{icon}</span>
       </button>
      </div>
     </>

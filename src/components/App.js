@@ -1,6 +1,8 @@
 import React from 'react';
 import '../scss/App.scss';
 import Nav from './Nav';
+import LandingPage from './LandingPage';
+import { Switch, Route } from "react-router-dom";
 
 import ToDosContainer from './ToDosContainer';
 import ToDonesContainer from './ToDonesContainer';
@@ -33,8 +35,15 @@ class App extends React.Component {
       <div className="App">
         <Nav />
         <main>
-          <ToDosContainer data={sortTodos}/>
-          <ToDonesContainer data={sortTodones}/>
+          <Switch>
+            <Route exact path='/'>
+              <LandingPage />
+            </Route>
+            <Route path='/todos'>
+              <ToDosContainer data={sortTodos}/>
+              <ToDonesContainer data={sortTodones}/>
+            </Route>
+          </Switch>
         </main>
       </div>
     );

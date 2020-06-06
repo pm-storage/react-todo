@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link }  from "react-router-dom";
+
 
 const Nav = () => {
+
 return (
   <nav>
-    <p>ToDo's</p>
-    <small>Plamen Mitev</small>
+    <Link to='/'>Home</Link>
+    <Link to='/todos'>ToDos</Link>
   </nav>
 )
 
