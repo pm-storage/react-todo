@@ -4,7 +4,7 @@ const Item = (props) => {
   let icon;
   let {status, _id, text} = props.info;
 
-  if(status) icon = <span>&#9997;</span>;
+  if(!status) icon = <span>&#9997;</span>;
   else icon =<span>&#10006;</span>;
   
   const callPapa = () => {
@@ -13,7 +13,7 @@ const Item = (props) => {
 
   return(
     <>
-     <div className={status ? 'todo' : 'todones'}>
+     <div className={status ? 'todones' : 'todo'}>
       <p>{text}</p>
       <button onClick={callPapa}>
         {icon}
