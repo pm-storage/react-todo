@@ -25,6 +25,31 @@ class App extends React.Component {
     })
   }
 
+  updateTodos = (id) => {
+
+    let item;
+    const newItems = this.state.toDos.map((el) => {
+      if(el._id === id) {
+        el.status = !el.status;
+        item = el;
+      }
+      return el;
+    })
+    fetch(`https://ds-todo-api.now.sh/todos/${item._id}`, {
+      method: 'PUT',
+      header: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        status: item.status,
+      }),
+    })
+    .then((res) => res.json())
+    .then((todoUpdated) => {
+      console.log('todo updated')
+      this.setState({
+        items: newItems
+      });
+    });
+  };
 
   render() {
     let items = this.state.toDos;
@@ -40,8 +65,8 @@ class App extends React.Component {
               <LandingPage />
             </Route>
             <Route path='/todos'>
-              <ToDosContainer data={sortTodos}/>
-              <ToDonesContainer data={sortTodones}/>
+              <ToDosContainer data={sortTodos} callGrandpa={this.updateTodos}/>
+              <ToDonesContainer data={sortTodones} callGrandma={this.updateTodos}/>
             </Route>
           </Switch>
         </main>

@@ -6,13 +6,17 @@ const Item = (props) => {
 
   if(status) icon = <span>&#9997;</span>;
   else icon =<span>&#10006;</span>;
+  
+  const callPapa = () => {
+    props.callYourParent(_id);
+  }
 
   return(
     <>
      <div className={status ? 'todo' : 'todones'}>
       <p>{text}</p>
-      <button>
-        <span>{icon}</span>
+      <button onClick={callPapa}>
+        {icon}
       </button>
      </div>
     </>

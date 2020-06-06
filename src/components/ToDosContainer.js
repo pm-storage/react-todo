@@ -5,9 +5,12 @@ const ToDosContainer = (props) => {
 
   let {data} = props;
 
+  const onUpdateItem = (id) => {
+    props.callGrandpa(id)
+  }
 
   let jsxBoilerPlate = data.map(todo => {
-    return <Items key={todo._id} info={todo}/>
+    return <Items key={todo._id} info={todo} callYourParent={onUpdateItem}/>
   })
 
   return(

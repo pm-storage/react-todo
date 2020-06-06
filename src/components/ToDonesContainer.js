@@ -4,9 +4,13 @@ import Items from './Items';
 const ToDonesContainer = (props) => {
 
   let {data} = props;
+  
+  const onUpdateItem = (id) => {
+    props.callGrandma(id);
+  };
 
   let jsxBoilerPlate = data.map(todo => (
-    <Items key={todo._id} info={todo}/>
+     <Items key={todo._id} info={todo} callYourParent={onUpdateItem}/>
   ))
 
   return(
